@@ -1,0 +1,353 @@
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 530
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use ecomuserms;
+Database changed
+mysql> select * from users;
+ERROR 1146 (42S02): Table 'ecomuserms.users' doesn't exist
+mysql> select * fron user;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fron user' at line 1
+mysql> select * from user;
++---------+----------------------+------------+-----------+------------+
+| user_id | email                | first_name | last_name | phone      |
++---------+----------------------+------------+-----------+------------+
+|       1 | karthik@gmail.com    | karthik    | polipalli | 9124567858 |
+|       2 | santhosh@gmail.com   | Santhosh   | Pasam     | 8824576558 |
+|       3 | dali@gmail.com       | Dali       | Vinjamuru | 9024576558 |
+|       4 | rishi@gmail.com      | Rishi      | Kumar     | 8024576558 |
+|       5 | nani@gmail.com       | Nani       | Pasam     | 8824576558 |
+|       6 | ravi.kumar@gmail.com | Ravi       | Kumar     | 9876543210 |
+|       7 | sneha@gmail.com      | Sneha      | Reddy     | 9123456780 |
+|       8 | arjun@gmail.com      | Arjun      | Varma     | 9988776655 |
+|       9 | meena@gmail.com      | Meena      | Sharma    | 9090909090 |
+|      10 | karthik@gmail.com    | Karthik    | Rao       | 9345678901 |
++---------+----------------------+------------+-----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| course_management   |
+| customer_management |
+| customerservlet     |
+| ecomcartms          |
+| ecomerce            |
+| ecomfavouritems     |
+| ecomorderms         |
+| ecompaymentms       |
+| ecomproductms       |
+| ecomshippingms      |
+| ecomuserms          |
+| employee_db         |
+| information_schema  |
+| jfs44               |
+| mysql               |
+| performance_schema  |
+| record_system       |
+| securitydb          |
+| spring              |
+| springrest          |
+| sys                 |
++---------------------+
+21 rows in set (0.01 sec)
+
+mysql> drop database ecomuserms;
+Query OK, 2 rows affected (0.11 sec)
+
+mysql> drop database ecomproductms;
+Query OK, 2 rows affected (0.06 sec)
+
+mysql> drop database ecomcartms;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> drop database  ecomorderms;
+Query OK, 2 rows affected (0.06 sec)
+
+mysql> drop database ecomproductms;
+ERROR 1008 (HY000): Can't drop database 'ecomproductms'; database doesn't exist
+mysql> drop database ecomproductms;
+ERROR 1008 (HY000): Can't drop database 'ecomproductms'; database doesn't exist
+mysql> drop database ecompaymentms;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> drop database ecomshippingms;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> drop database ecomfavouritems;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| course_management   |
+| customer_management |
+| customerservlet     |
+| ecomerce            |
+| ecomuserms          |
+| employee_db         |
+| information_schema  |
+| jfs44               |
+| mysql               |
+| performance_schema  |
+| record_system       |
+| securitydb          |
+| spring              |
+| springrest          |
+| sys                 |
++---------------------+
+15 rows in set (0.00 sec)
+
+mysql> drop database ecomuserms;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| course_management   |
+| customer_management |
+| customerservlet     |
+| ecomerce            |
+| employee_db         |
+| information_schema  |
+| jfs44               |
+| mysql               |
+| performance_schema  |
+| record_system       |
+| securitydb          |
+| spring              |
+| springrest          |
+| sys                 |
++---------------------+
+14 rows in set (0.00 sec)
+
+mysql> select * from user;
+ERROR 1046 (3D000): No database selected
+mysql> select * from users;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++---------------------+
+| Database            |
++---------------------+
+| course_management   |
+| customer_management |
+| customerservlet     |
+| ecomerce            |
+| ecomuserms          |
+| employee_db         |
+| information_schema  |
+| jfs44               |
+| mysql               |
+| performance_schema  |
+| record_system       |
+| securitydb          |
+| spring              |
+| springrest          |
+| sys                 |
++---------------------+
+15 rows in set (0.00 sec)
+
+mysql> use ecomuserms;
+Database changed
+mysql> select * from user;
++---------+----------------------+------------+-----------+------------+
+| user_id | email                | first_name | last_name | phone      |
++---------+----------------------+------------+-----------+------------+
+|       1 | ravi.kumar@gmail.com | Ravi       | Kumar     | 9876543210 |
+|       2 | sneha@gmail.com      | Sneha      | Reddy     | 9123456780 |
+|       3 | arjun@gmail.com      | Arjun      | Varma     | 9988776655 |
+|       4 | meena@gmail.com      | Meena      | Sharma    | 9090909090 |
+|       5 | karthik@gmail.com    | Karthik    | Rao       | 9345678901 |
++---------+----------------------+------------+-----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> use ecomproductms;
+Database changed
+mysql> select * from products;
++----+----------------------------+----------------------------+------------+----------+-------+
+| id | created_at                 | description                | name       | price    | stock |
++----+----------------------------+----------------------------+------------+----------+-------+
+|  1 | 2026-02-19 17:47:03.444195 | Dell Inspiron 15           | Laptop     | 55000.00 |    10 |
+|  2 | 2026-02-19 17:50:48.499819 | Samsung Galaxy S23         | Smartphone | 75000.00 |    25 |
+|  3 | 2026-02-19 17:52:29.568437 | Sony Wireless Headphones   | Headphones |  5999.00 |    40 |
+|  4 | 2026-02-19 17:53:16.909776 | Mechanical Gaming Keyboard | Keyboard   |  2499.00 |    30 |
+|  5 | 2026-02-19 17:54:08.642563 | LG 24-inch Full HD         | Monitor    | 12999.00 |    15 |
++----+----------------------------+----------------------------+------------+----------+-------+
+5 rows in set (0.02 sec)
+
+mysql> use ecomcartms;
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_ecomcartms |
++----------------------+
+| cart_items           |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from cart_items;
++----+----------------------------+------------+----------+---------+
+| id | added_at                   | product_id | quantity | user_id |
++----+----------------------------+------------+----------+---------+
+|  1 | 2026-02-19 18:24:16.111740 |          1 |        2 |       1 |
++----+----------------------------+------------+----------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from cart_items;
++----+----------------------------+------------+----------+---------+
+| id | added_at                   | product_id | quantity | user_id |
++----+----------------------------+------------+----------+---------+
+|  1 | 2026-02-19 18:24:16.111740 |          1 |        2 |       1 |
+|  2 | 2026-02-19 18:54:34.276260 |          2 |        1 |       1 |
+|  3 | 2026-02-19 18:55:52.478874 |          3 |        4 |       1 |
++----+----------------------------+------------+----------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from cart_items;
++----+----------------------------+------------+----------+---------+
+| id | added_at                   | product_id | quantity | user_id |
++----+----------------------------+------------+----------+---------+
+|  1 | 2026-02-19 18:24:16.111740 |          1 |        2 |       1 |
+|  2 | 2026-02-19 18:54:34.276260 |          2 |        1 |       1 |
+|  3 | 2026-02-19 18:55:52.478874 |          3 |        4 |       1 |
+|  4 | 2026-02-19 19:03:28.716169 |          1 |        1 |       2 |
+|  5 | 2026-02-19 19:03:56.315201 |          4 |        2 |       2 |
+|  6 | 2026-02-19 19:04:16.233243 |          4 |        2 |       2 |
+|  7 | 2026-02-19 19:04:52.047115 |          5 |        1 |       3 |
+|  8 | 2026-02-19 19:05:27.775769 |          3 |        6 |       4 |
++----+----------------------------+------------+----------+---------+
+8 rows in set (0.00 sec)
+
+mysql> select * from cart_items;
++----+----------------------------+------------+----------+---------+
+| id | added_at                   | product_id | quantity | user_id |
++----+----------------------------+------------+----------+---------+
+|  2 | 2026-02-19 18:54:34.276260 |          2 |        1 |       1 |
+|  3 | 2026-02-19 18:55:52.478874 |          3 |        4 |       1 |
+|  4 | 2026-02-19 19:03:28.716169 |          1 |        1 |       2 |
+|  5 | 2026-02-19 19:03:56.315201 |          4 |        2 |       2 |
+|  6 | 2026-02-19 19:04:16.233243 |          4 |        2 |       2 |
+|  7 | 2026-02-19 19:04:52.047115 |          5 |        1 |       3 |
+|  8 | 2026-02-19 19:05:27.775769 |          3 |        6 |       4 |
++----+----------------------------+------------+----------+---------+
+7 rows in set (0.00 sec)
+
+mysql> use ecomorderms;
+Database changed
+mysql> show tables;
++-----------------------+
+| Tables_in_ecomorderms |
++-----------------------+
+| order_items           |
+| orders                |
++-----------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from orders;
++----+----------------------------+---------+-------------+---------+
+| id | palced_at                  | status  | total_price | user_id |
++----+----------------------------+---------+-------------+---------+
+|  1 | 2026-02-19 19:17:56.008642 | SHIPPED |    98996.00 |       1 |
+|  2 | 2026-02-19 19:19:04.479502 | PLACED  |    64996.00 |       2 |
++----+----------------------------+---------+-------------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from order_items;
++----+----------+------------+----------+----------+
+| id | price    | product_id | quantity | order_id |
++----+----------+------------+----------+----------+
+|  1 | 75000.00 |          2 |        1 |        1 |
+|  2 |  5999.00 |          3 |        4 |        1 |
+|  3 | 55000.00 |          1 |        1 |        2 |
+|  4 |  2499.00 |          4 |        2 |        2 |
+|  5 |  2499.00 |          4 |        2 |        2 |
++----+----------+------------+----------+----------+
+5 rows in set (0.01 sec)
+
+mysql> use ecompaymentms;
+Database changed
+mysql> show tables;
++-------------------------+
+| Tables_in_ecompaymentms |
++-------------------------+
+| payments                |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from payments;
++----+----------+----------+----------------------------+---------+---------+
+| id | amount   | order_id | payment_time               | status  | user_id |
++----+----------+----------+----------------------------+---------+---------+
+|  1 | 98996.00 |        1 | 2026-02-19 19:30:59.429615 | SUCCESS |       1 |
++----+----------+----------+----------------------------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from payments;
++----+----------+----------+----------------------------+---------+---------+
+| id | amount   | order_id | payment_time               | status  | user_id |
++----+----------+----------+----------------------------+---------+---------+
+|  1 | 98996.00 |        1 | 2026-02-19 19:30:59.429615 | SUCCESS |       1 |
+|  2 | 64996.00 |        2 | 2026-02-19 19:32:00.102611 | SUCCESS |       2 |
++----+----------+----------+----------------------------+---------+---------+
+2 rows in set (0.00 sec)
+
+mysql> use ecomshippingms;
+Database changed
+mysql> show tables;
++--------------------------+
+| Tables_in_ecomshippingms |
++--------------------------+
+| shipping_info            |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from shipping_info;
++----+---------+----------------------------+----------+----------------------------+-----------------+-----------+
+| id | carrier | delivery_date              | order_id | shipped_at                 | shipping_method | status    |
++----+---------+----------------------------+----------+----------------------------+-----------------+-----------+
+|  1 | FedEx   | 2026-02-19 19:34:55.989079 |        1 | 2026-02-19 19:34:30.534618 | Next-Day        | DELIVERED |
++----+---------+----------------------------+----------+----------------------------+-----------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> use ecomfavouritems;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_ecomfavouritems |
++---------------------------+
+| favourites                |
++---------------------------+
+1 row in set (0.02 sec)
+
+mysql> select * from favourites;
++----+----------------------------+------------+---------+
+| id | added_at                   | product_id | user_id |
++----+----------------------------+------------+---------+
+|  1 | 2026-02-19 19:39:24.347022 |          5 |       2 |
+|  2 | 2026-02-19 19:39:46.162609 |          4 |       3 |
+|  3 | 2026-02-19 19:39:51.328598 |          4 |       4 |
+|  4 | 2026-02-19 19:39:58.875979 |          5 |       4 |
++----+----------------------------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select * from favourites;
++----+----------------------------+------------+---------+
+| id | added_at                   | product_id | user_id |
++----+----------------------------+------------+---------+
+|  2 | 2026-02-19 19:39:46.162609 |          4 |       3 |
+|  3 | 2026-02-19 19:39:51.328598 |          4 |       4 |
+|  4 | 2026-02-19 19:39:58.875979 |          5 |       4 |
++----+----------------------------+------------+---------+
+3 rows in set (0.00 sec)
